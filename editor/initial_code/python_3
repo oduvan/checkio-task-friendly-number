@@ -1,11 +1,15 @@
-def checkio(a, b):
+
+def checkio(number, base=1000, decimals=0, suffix='',
+                    powers=['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']):
     """
-        sums two passed arguments
+    Format a number as friendly text, using common suffixes.
     """
-    return None
+    return str(number)
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
-    assert checkio(3, 2) == 5
-    assert checkio(5, 7) == 12
-    print('Done')
+    assert checkio(102) == '102', '102'
+    assert checkio(10240) == '10k', '10k'
+    assert checkio(12341234, decimals=1) == '12.3M','12.3M'
+    assert checkio(1024000000, base=1024, suffix='iB') == '976MiB', '976MiB'
+    
