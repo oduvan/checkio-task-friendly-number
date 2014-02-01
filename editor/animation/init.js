@@ -64,15 +64,28 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
 
+            function convert_test_arguments(test_args){
+                var out_args = test_args[0].join(', ');
+                for(var k_kwargs in test_args[1]){
+                    out_args += ', ' + k_kwargs + '=' + test_args[1][k_kwargs]
+                }
+                return out_args
+            }
+
+            var out_input = convert_test_arguments(checkioInput);
+
+            
+            
+
             if (!result) {
-                $content.find('.call').html('Fail: checkio(' + JSON.stringify(checkioInput) + ')');
+                $content.find('.call').html('Fail: checkio(' + out_input + ')');
                 $content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
                 $content.find('.answer').addClass('error');
                 $content.find('.output').addClass('error');
                 $content.find('.call').addClass('error');
             }
             else {
-                $content.find('.call').html('Pass: checkio(' + JSON.stringify(checkioInput) + ')');
+                $content.find('.call').html('Pass: checkio(' + out_input + ')');
                 $content.find('.answer').remove();
             }
             //Dont change the code before it
