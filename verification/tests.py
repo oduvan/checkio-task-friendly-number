@@ -17,6 +17,18 @@ TESTS = {
         {
             "input": [[12341234], {'decimals': 1}],
             "answer": '12.3M'
-        }
+        },
+        {
+            "input": [[102], {'decimals': 2}],
+            "answer": '102.00'
+        },
+        {
+            "input": [[10240], {}],
+            "answer": '10k'
+        },
+        {
+            "input": [[1024000000], {'base': 1024, 'suffix': 'iB'}],
+            "answer": '976MiB'
+        },
     ]
 }
