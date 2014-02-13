@@ -1,8 +1,45 @@
 <p>
-    <i>Numbers for IT should look prettier</i>
+    Numbers for IT should look prettier. So let's write code for that.
 </p>
 
+<p>
+    You should write a function for converting a number with the several rules.
+    For start you need cut the number with a given <strong>base</strong> (default 1000).
+    The number should be a coefficient with letters designation of the power.
+    The coefficient is a real number with "<strong>decimals</strong>"
+    digits after point (default value of decimals is 0).
+    Also for function given a list of <strong>powers</strong> designations
+    (default ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']).
+    If you are given <strong>suffix</strong>, then it must be added in the end.
+    For the coefficient is using rounding down rule if decimal=0, else using the standard rounding.
+</p>
 
+<p>
+    Let's look at examples. It will be simpler.
+</p>
+
+<ul>
+    <li>
+        n=102<br>
+        result: "102", because base is default 1000 and 102 is lower this base.
+    </li>
+    <li>
+        n=10240<br>
+        result: "10k", because base is default 1000..
+    </li>
+    <li>
+        n=12341234, decimals=1<br>
+        result: "12.3M".
+    </li>
+    <li>
+        n=12461, decimals=1<br>
+        result: "12.5k".
+    </li>
+    <li>
+        n=1024000000, base=1024, suffix='iB'<br>
+        result: '976MiB'.
+    </li>
+</ul>
 
 
 <div class="for_info_only">
@@ -13,6 +50,7 @@
 checkio(102) == '102'
 checkio(10240) == '10k'
 checkio(12341234, decimals=1) == '12.3M'
+checkio(12461, decimals=1) == '12.5k'
 checkio(1024000000, base=1024, suffix='iB') == '976MiB'
     </pre>
 </div>
