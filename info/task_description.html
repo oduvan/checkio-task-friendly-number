@@ -14,41 +14,18 @@
     For the coefficient is using rounding down rule if decimal=0, else using the standard rounding.
 </p>
 
-<p>
-    Let's look at examples. It will be simpler.
-</p>
-
-<ul>
-    <li>
-        n=102<br>
-        result: "102", because base is default 1000 and 102 is lower this base.
-    </li>
-    <li>
-        n=10240<br>
-        result: "10k", because base is default 1000..
-    </li>
-    <li>
-        n=12341234, decimals=1<br>
-        result: "12.3M".
-    </li>
-    <li>
-        n=12461, decimals=1<br>
-        result: "12.5k".
-    </li>
-    <li>
-        n=1024000000, base=1024, suffix='iB'<br>
-        result: '976MiB'.
-    </li>
-</ul>
-
 
 <div class="for_info_only">
     <p>
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-checkio(102) == '102'
+# because base is default 1000 and 102 is lower this base.
+checkio(102) == '102'  
+
+#because base is default 1000.
 checkio(10240) == '10k'
+
 checkio(12341234, decimals=1) == '12.3M'
 checkio(12461, decimals=1) == '12.5k'
 checkio(1024000000, base=1024, suffix='iB') == '976MiB'
