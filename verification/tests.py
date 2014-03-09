@@ -38,6 +38,11 @@ TESTS = {
             "input": [-155, {'base': 100, "decimals": 1, "powers": ['', 'd', 'D']}],
             "answer": '-1.6d'
         },
+        {
+            "input": [255000000000, {"powers": ['', 'k', 'M']}],
+            "answer": '255000M'
+        },
+
 
 
     ]

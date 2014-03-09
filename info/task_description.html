@@ -12,6 +12,7 @@
     (default ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']).
     If you are given <strong>suffix</strong>, then it must be added in the end.
     For the coefficient is using rounding down rule (5.6&rArr;5, -5.6&rArr;-5) if decimal=0, else using the standard rounding.
+    If you have enough powers - stay at maximum.
 </p>
 
 <p>
@@ -47,6 +48,11 @@
         n=-155, base=100, decimals=1, powers=['', 'd', 'D']<br>
         result: '-1.6d'.
     </li>
+    <li>
+        n=255000000000, powers=['', 'k', 'M']<br>
+        result: '255000M'.
+    </li>
+
 </ul>
 
 
@@ -62,6 +68,14 @@ checkio(12461, decimals=1) == '12.5k'
 checkio(1024000000, base=1024, suffix='iB') == '976MiB'
 checkio(-150, base=100, powers=['', 'd', 'D']) == '-1d'
 checkio(-155, base=100, decimals=1, powers=['', 'd', 'D']) == '-1.6d'
+checkio(255000000000, powers=['', 'k', 'M']) == '255000M'
     </pre>
 </div>
 
+<p>
+    <strong>Precondition:</strong> 1 < base < 10<sup>32</sup><br>
+    -10<sup>32</sup> < number < 10<sup>32</sup><br>
+    0 &le; decimals < 32<br>
+    0 < |powers| < 32<br>
+    &forall; p ∈ powers : p is a string<br>
+</p>
