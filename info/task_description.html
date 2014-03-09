@@ -11,7 +11,7 @@
     Also for function given a list of <strong>powers</strong> designations
     (default ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']).
     If you are given <strong>suffix</strong>, then it must be added in the end.
-    For the coefficient is using rounding down rule if decimal=0, else using the standard rounding.
+    For the coefficient is using rounding down rule (5.6&rArr;5, -5.6&rArr;-5) if decimal=0, else using the standard rounding.
 </p>
 
 <p>
@@ -25,7 +25,7 @@
     </li>
     <li>
         n=10240<br>
-        result: "10k", because base is default 1000..
+        result: "10k", because base is default 1000.
     </li>
     <li>
         n=12341234, decimals=1<br>
@@ -38,6 +38,14 @@
     <li>
         n=1024000000, base=1024, suffix='iB'<br>
         result: '976MiB'.
+    </li>
+    <li>
+        n=-150, base=100, powers=['', 'd', 'D']<br>
+        result: '-1d'.
+    </li>
+    <li>
+        n=-155, base=100, decimals=1, powers=['', 'd', 'D']<br>
+        result: '-1.6d'.
     </li>
 </ul>
 
@@ -52,6 +60,8 @@ checkio(10240) == '10k'
 checkio(12341234, decimals=1) == '12.3M'
 checkio(12461, decimals=1) == '12.5k'
 checkio(1024000000, base=1024, suffix='iB') == '976MiB'
+checkio(-150, base=100, powers=['', 'd', 'D']) == '-1d'
+checkio(-155, base=100, decimals=1, powers=['', 'd', 'D']) == '-1.6d'
     </pre>
 </div>
 

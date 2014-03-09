@@ -9,26 +9,36 @@ Each test is dict with
 
 
 TESTS = {
-    "Basics": [
+    "1. Base": [
         {
-            "input": [[102], {}],
+            "input": [102, {}],
             "answer": '102'
         },
         {
-            "input": [[12341234], {'decimals': 1}],
+            "input": [12341234, {'decimals': 1}],
             "answer": '12.3M'
         },
         {
-            "input": [[102], {'decimals': 2}],
+            "input": [102, {'decimals': 2}],
             "answer": '102.00'
         },
         {
-            "input": [[10240], {}],
+            "input": [10240, {}],
             "answer": '10k'
         },
         {
-            "input": [[1024000000], {'base': 1024, 'suffix': 'iB'}],
+            "input": [1024000000, {'base': 1024, 'suffix': 'iB'}],
             "answer": '976MiB'
         },
+        {
+            "input": [-150, {'base': 100, "powers": ['', 'd', 'D']}],
+            "answer": '-1d'
+        },
+        {
+            "input": [-155, {'base': 100, "decimals": 1, "powers": ['', 'd', 'D']}],
+            "answer": '-1.6d'
+        },
+
+
     ]
 }
