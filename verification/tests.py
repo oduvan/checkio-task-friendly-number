@@ -19,6 +19,10 @@ TESTS = {
             "answer": '12.3M'
         },
         {
+            "input": [12000000, {'decimals': 1}],
+            "answer": '12.000M'
+        },
+        {
             "input": [102, {'decimals': 2}],
             "answer": '102.00'
         },

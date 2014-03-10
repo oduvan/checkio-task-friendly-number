@@ -33,6 +33,10 @@
         result: "12.3M".
     </li>
     <li>
+        n=12000000, decimals=3<br>
+        result: "12.000M".
+    </li>
+    <li>
         n=12461, decimals=1<br>
         result: "12.5k".
     </li>
@@ -64,6 +68,7 @@
 checkio(102) == '102'
 checkio(10240) == '10k'
 checkio(12341234, decimals=1) == '12.3M'
+checkio(12000000, decimals=3) == '12.000M'
 checkio(12461, decimals=1) == '12.5k'
 checkio(1024000000, base=1024, suffix='iB') == '976MiB'
 checkio(-150, base=100, powers=['', 'd', 'D']) == '-1d'
