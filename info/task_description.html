@@ -1,18 +1,17 @@
 <p>
-    Numbers for IT should look prettier. So let's write code for that.
+    Long numbers can be made to look nicer, so let’s write some code to do just that.
 </p>
 
 <p>
-    You should write a function for converting a number with the several rules.
-    For start you need cut the number with a given <strong>base</strong> (default 1000).
-    The number should be a coefficient with letters designation of the power.
-    The coefficient is a real number with "<strong>decimals</strong>"
-    digits after point (default value of decimals is 0).
-    Also for function given a list of <strong>powers</strong> designations
-    (default ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']).
-    If you are given <strong>suffix</strong>, then it must be added in the end.
-    For the coefficient is using rounding down rule (5.6&rArr;5, -5.6&rArr;-5) if decimal=0, else using the standard rounding.
-    If you have enough powers - stay at maximum.
+    You should write a function for converting a <strong>number</strong> using several rules.
+    For starters, you will need to cut the number with a given base (<strong>base</strong> argument; default 1000).
+    The number should be a coefficient with letters designating the power.
+    The coefficient is a real number with decimal after the point (<strong>decimals</strong> argument; default 0).
+    You will be given a list of power designations (<strong>powers</strong> argument; default ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']).
+    If you are given suffix (<strong>suffix</strong> argument; default ‘’) ,
+    then you must be add it at the end. For the coefficient, use the rounding down rule (5.6⇒5, -5.6⇒-5) if the decimal = 0,
+    else use the standard rounding procedure. If you don’t have enough powers - stay at the maximum.
+    If the number of decimals are greater than the real number of digits after dot, trail it with zeroes.
 </p>
 
 <p>
@@ -77,6 +76,12 @@ checkio(255000000000, powers=['', 'k', 'M']) == '255000M'
     </pre>
 </div>
 
+
+<p>
+    <strong>How it is used:</strong> In the physics and IT we have a lot of various numbers.
+    Sometimes we need to make them more simpler and easier to read. When you talk about gigabytes sometimes you don’t need to know the exact number bytes or kilobytes.
+
+</p>
 <p>
     <strong>Precondition:</strong> 1 < base < 10<sup>32</sup><br>
     -10<sup>32</sup> < number < 10<sup>32</sup><br>
