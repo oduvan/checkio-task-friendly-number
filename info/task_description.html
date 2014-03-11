@@ -12,6 +12,7 @@
     then you must be add it at the end. For the coefficient, use the rounding down rule (5.6⇒5, -5.6⇒-5) if the decimal = 0,
     else use the standard rounding procedure. If you don’t have enough powers - stay at the maximum.
     If the number of decimals are greater than the real number of digits after dot, trail it with zeroes.
+    And zero is always zero without powers.
 </p>
 
 <p>
@@ -85,7 +86,7 @@ checkio(255000000000, powers=['', 'k', 'M']) == '255000M'
 <p>
     <strong>Precondition:</strong> 1 < base < 10<sup>32</sup><br>
     -10<sup>32</sup> < number < 10<sup>32</sup><br>
-    0 &le; decimals < 32<br>
-    0 < |powers| < 32<br>
+    0 &le; decimals &le; 15<br>
+    0 < |powers| &le; 32<br>
     &forall; p ∈ powers : p is a string<br>
 </p>

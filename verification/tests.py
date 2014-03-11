@@ -7,7 +7,6 @@ Each test is dict with
     "explanation" -- not necessary key, it's using for additional info in animation.
 """
 
-
 TESTS = {
     "1. Base": [
         {
@@ -19,7 +18,7 @@ TESTS = {
             "answer": '12.3M'
         },
         {
-            "input": [12000000, {'decimals': 1}],
+            "input": [12000000, {'decimals': 3}],
             "answer": '12.000M'
         },
         {
@@ -46,8 +45,53 @@ TESTS = {
             "input": [255000000000, {"powers": ['', 'k', 'M']}],
             "answer": '255000M'
         },
-
-
-
+    ],
+    "2. Edges": [
+        {
+            "input": [1, {}],
+            "answer": '1'
+        },
+        {
+            "input": [0, {'decimals': 3, 'suffix': "th"}],
+            "answer": '0.000th'
+        },
+        {
+            "input": [10 ** 24, {}],
+            "answer": '1Y'
+        },
+        {
+            "input": [10 ** 32, {}],
+            "answer": '100000000Y'
+        },
+        {
+            "input": [4294967297, {'base': 2, 'powers': ["p" + str(n) for n in range(32)]}],
+            "answer": '2p31'
+        },
+        {
+            "input": [1, {'decimals': 15}],
+            "answer": '1.000000000000000'
+        },
+    ],
+    "3. Extra": [
+        {
+            "input": [42, {'base': 10, 'powers': ["u", "d"]}],
+            "answer": '4d'
+        },
+        {
+            "input": [42, {'powers': ["u", "d"], "suffix": "-n"}],
+            "answer": '42u-n'
+        },
+        {
+            "input": [19821904, {}],
+            "answer": '42u-n'
+        },
+        {
+            "input": [4000000001, {"base": 1024, "decimal": 1}],
+            "answer": '42u-n'
+        },
+        {
+            "input": [9000, {"suffix": "iB"}],
+            "answer": '9KiB'
+        },
     ]
 }
