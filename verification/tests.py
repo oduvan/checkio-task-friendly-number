@@ -83,15 +83,15 @@ TESTS = {
         },
         {
             "input": [19821904, {}],
-            "answer": '42u-n'
+            "answer": '19M'
         },
         {
-            "input": [4000000001, {"base": 1024, "decimal": 1}],
-            "answer": '42u-n'
+            "input": [4000000001, {"base": 1024, "decimals": 1}],
+            "answer": '3.7G'
         },
         {
             "input": [9000, {"suffix": "iB"}],
-            "answer": '9KiB'
+            "answer": '9kiB'
         },
     ]
 }
