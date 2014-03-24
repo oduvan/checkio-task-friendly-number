@@ -22,39 +22,39 @@
 <ul>
     <li>
         n=102<br>
-        result: "102", because base is default 1000 and 102 is lower this base.
+        result: "102", the base is default 1000 and 102 is lower this base.
     </li>
     <li>
         n=10240<br>
-        result: "10k", because base is default 1000.
+        result: "10k", the base is default 1000 and rounding down.
     </li>
     <li>
         n=12341234, decimals=1<br>
-        result: "12.3M".
+        result: "12.3M", one digit after the dot.
     </li>
     <li>
         n=12000000, decimals=3<br>
-        result: "12.000M".
+        result: "12.000M", trailing zeros.
     </li>
     <li>
         n=12461, decimals=1<br>
-        result: "12.5k".
+        result: "12.5k", standard rounding.
     </li>
     <li>
         n=1024000000, base=1024, suffix='iB'<br>
-        result: '976MiB'.
+        result: '976MiB', the different base and the suffix.
     </li>
     <li>
         n=-150, base=100, powers=['', 'd', 'D']<br>
-        result: '-1d'.
+        result: '-1d', the negative number and rounding down.
     </li>
     <li>
         n=-155, base=100, decimals=1, powers=['', 'd', 'D']<br>
-        result: '-1.6d'.
+        result: '-1.6d', the negative number and standard rounding.
     </li>
     <li>
         n=255000000000, powers=['', 'k', 'M']<br>
-        result: '255000M'.
+        result: '255000M', there is not enough powers.
     </li>
 
 </ul>
