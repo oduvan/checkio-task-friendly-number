@@ -29,14 +29,13 @@ checkio.referee.cover_codes
 from checkio.signals import ON_CONNECT
 from checkio import api
 from checkio.referees.io import CheckiOReferee
-from checkio.referees import checkers
 
 from tests import TESTS
 
 cover_both = '''
 
 def cover(func, in_data):
-    return func(*in_data[0], **in_data[1])
+    return func(in_data[0], **in_data[1])
 
 '''
 
@@ -49,8 +48,5 @@ api.add_listener(
             'python-27': cover_both,  # or None
             'python-3': cover_both
         },
-        # checker=None,  # checkers.float.comparison(2)
-        # add_allowed_modules=[],
-        # add_close_builtins=[],
-        # remove_allowed_modules=[]
+        function_name='friendly_number'
     ).on_ready)
