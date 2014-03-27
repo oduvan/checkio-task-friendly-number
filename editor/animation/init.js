@@ -43,6 +43,12 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             var checkioInputStr = checkioInput[0];
 
+            var explanation = data.ext["explanation"];
+
+            if (explanation) {
+                checkioInputStr = explanation;
+            }
+
             for(var kwarg in checkioInput[1]){
                 checkioInputStr += ', ' + kwarg + '=' + JSON.stringify(checkioInput[1][kwarg]);
             }
@@ -66,7 +72,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
 
             //if you need additional info from tests (if exists)
-            var explanation = data.ext["explanation"];
+
 
             $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
 
