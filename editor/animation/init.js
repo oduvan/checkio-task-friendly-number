@@ -43,15 +43,17 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             var checkioInputStr = checkioInput[0];
 
-            var explanation = data.ext["explanation"];
-
-            if (explanation) {
-                checkioInputStr = explanation;
+            var pow = String(checkioInputStr).match(/(?:\de\+)(\d+)/);
+            if (pow && pow.length > 1) {
+                checkioInputStr = "10**" + pow[1];
             }
+
 
             for(var kwarg in checkioInput[1]){
                 checkioInputStr += ', ' + kwarg + '=' + JSON.stringify(checkioInput[1][kwarg]);
             }
+
+
 
             if (data.error) {
                 $content.find('.call').html('Fail: friendly_number(' + checkioInputStr + ')');
@@ -70,6 +72,12 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             var result = data.ext["result"];
             var result_addon = data.ext["result_addon"];
 
+//            var explanation = data.ext["explanation"];
+//
+//
+//            if (explanation) {
+//                checkioInputStr = explanation;
+//            }
 
             //if you need additional info from tests (if exists)
 
