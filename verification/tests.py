@@ -57,11 +57,13 @@ TESTS = {
         },
         {
             "input": [10 ** 24, {}],
-            "answer": '1Y'
+            "answer": '1Y',
+            "explanation": "10**24"
         },
         {
             "input": [10 ** 32, {}],
-            "answer": '100000000Y'
+            "answer": '100000000Y',
+            "explanation": "10**32"
         },
         {
             "input": [4294967297, {'base': 2, 'powers': ["p" + str(n) for n in range(32)]}],
